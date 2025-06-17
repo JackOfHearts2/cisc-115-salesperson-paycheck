@@ -1,4 +1,37 @@
-Harry Kim
-980.00 2.75
-11281.66
-97.78
+#include <iostream>
+#include <iomanip>
+#include <string>
+using namespace std;
+
+// Program to calculate and display an employee's gross pay details.
+// Using employee's first and last name, base salary, commission percentage, total sales, and expenses to calculate:
+// Commission earned = (commission percentage / 100) * total sales
+// Gross pay = base salary + commission earned - expenses
+
+int main() {
+  string firstName = "Harry";
+  string lastName = "Kim";
+  double baseSalary = 1400.00;
+  double commissionPercent = 2.75;
+  double totalSales = 11281.66;
+  double expenses = 97.78;
+
+  double commissionEarned = (commissionPercent / 100) * totalSales;
+  double grossPay = baseSalary + commissionEarned - expenses;
+
+  cout << fixed << setprecision(2);
+
+  cout << "Payroll data for " << firstName << " " << lastName << endl << endl;
+
+  cout << "  Base Salary:    " << setw(8) << baseSalary << endl;
+
+  cout << "  Commission:     " << setw(8) << commissionEarned
+       << " (" << commissionPercent << "% of " << totalSales << ")" << endl;
+
+  cout << "  Expenses:       " << setw(8) << expenses << endl;
+
+  cout << "                 " << "--------" << endl;
+
+  cout << "  Total:          " << setw(8) << grossPay << endl;
+
+}
